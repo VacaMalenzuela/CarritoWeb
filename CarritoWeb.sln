@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoWeb", "CarritoWeb\CarritoWeb.csproj", "{D0D4D010-B609-4DF4-A632-C349967A1A68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{BE1493A5-21F2-4BD1-AB50-DA23A20CAA60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0D4D010-B609-4DF4-A632-C349967A1A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D4D010-B609-4DF4-A632-C349967A1A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D4D010-B609-4DF4-A632-C349967A1A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D4D010-B609-4DF4-A632-C349967A1A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE1493A5-21F2-4BD1-AB50-DA23A20CAA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1493A5-21F2-4BD1-AB50-DA23A20CAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1493A5-21F2-4BD1-AB50-DA23A20CAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1493A5-21F2-4BD1-AB50-DA23A20CAA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {792B22A1-FEB9-4860-A42C-D6C4B6064679}
+	EndGlobalSection
+EndGlobal
