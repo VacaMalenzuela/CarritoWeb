@@ -14,6 +14,7 @@ namespace CarritoWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio Negocio = new ArticuloNegocio();
+            Session.Add("listaArticulos")
             dgvArticulos.DataSource = Negocio.listar();
             dgvArticulos.DataBind();
 
