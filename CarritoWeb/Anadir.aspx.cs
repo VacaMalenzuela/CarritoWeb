@@ -34,17 +34,16 @@ namespace CarritoWeb
 
         protected void btnAnadir_Click(object sender, EventArgs e)
         {
-            Response.Redirect("inicio.aspx", true);
+            Response.Redirect("Inicio.aspx", true);
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("inicio.aspx");
+            Response.Redirect("Inicio.aspx");
         }
 
         protected void btnCantidad_Click(object sender, EventArgs e)
         {
-            
             int cantidad = int.Parse(txtCantidad.Text) + 1;
             txtCantidad.Text = cantidad.ToString();
             Response.Redirect("Inicio.aspx");

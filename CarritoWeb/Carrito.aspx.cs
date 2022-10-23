@@ -13,5 +13,15 @@ namespace CarritoWeb
         {
 
         }
+
+        protected void btnSeguir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
+
+        protected void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

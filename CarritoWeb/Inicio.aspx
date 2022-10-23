@@ -25,7 +25,8 @@
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                         <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
                         <asp:BoundField HeaderText="Precio" DataField="Precio" />
-                        <asp:CommandField ShowSelectButton ="true" SelectText ="Seleccionar" HeaderText ="Accion" />
+                        <asp:ImageField HeaderText="Imagen" DataImageUrlField="ImagenUrl" ControlStyle-Width="20%" />
+                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Accion" />
                     </Columns>
                 </asp:GridView>
             </div>
