@@ -17,9 +17,7 @@ namespace CarritoWeb
             dgvArticulos.DataSource = Negocio.listar();
             dgvArticulos.DataBind();
 
-            DdlCategorias.Items.Add("Celulares");
-            DdlCategorias.Items.Add("Televisores");
-            DdlCategorias.Items.Add("Computadoras");
+            
         }
     }
 }
