@@ -15,16 +15,6 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
 
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand">Mi carrito de compras</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-        </div>
-    </nav>
-  
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,6 +38,15 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand">Mi carrito de compras</a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
 
         <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

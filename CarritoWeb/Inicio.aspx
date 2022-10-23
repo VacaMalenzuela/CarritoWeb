@@ -4,6 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container text-center">
         <div class="row">
             <div class="col-3">
@@ -19,11 +20,12 @@
                 </div>
             </div>
             <div class="col-9">
-                <asp:GridView ID="dgvArticulos" runat="server" onSelectedChanged CssClass="table table-bordered table-light" AutoGenerateColumns="false">
+                <asp:GridView ID="dgvArticulos" runat="server" DataKeyNames="Id" OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" CssClass="table table-bordered table-light" AutoGenerateColumns="false">
                     <Columns>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                         <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
                         <asp:BoundField HeaderText="Precio" DataField="Precio" />
+                        <asp:CommandField ShowSelectButton ="true" SelectText ="Seleccionar" HeaderText ="Accion" />
                     </Columns>
                 </asp:GridView>
             </div>

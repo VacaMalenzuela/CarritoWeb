@@ -14,11 +14,16 @@ namespace CarritoWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio Negocio = new ArticuloNegocio();
-            Session.Add("listaArticulos")
             dgvArticulos.DataSource = Negocio.listar();
             dgvArticulos.DataBind();
 
            
+        }
+
+        protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = dgvArticulos.SelectedDataKey.Value.ToString();
+            Response.Redirect("Anadir.aspx?id=" + id);
         }
     }
 }
