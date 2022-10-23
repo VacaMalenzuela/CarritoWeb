@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Ajax.Utilities;
 
 namespace CarritoWeb
 {
@@ -21,8 +22,32 @@ namespace CarritoWeb
                 txtNombre.Text = seleccionado.Nombre;
                 txtPrecio.Text = seleccionado.Precio.ToString();
                 txtNombre.ReadOnly = true;
-                txtPrecio.ReadOnly = true;  
+                txtPrecio.ReadOnly = true;
+                //decimal precio = decimal.Parse(txtPrecio.Text);
+                //int cantidad = 1;
+                //txtCantidad.Text = cantidad.ToString();
+                //txtCantidad.ReadOnly = true;
+                txtSubtotal.Text = seleccionado.Precio.ToString();
+                txtSubtotal.ReadOnly = true;
             }
+        }
+
+        protected void btnAnadir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("inicio.aspx", true);
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("inicio.aspx");
+        }
+
+        protected void btnCantidad_Click(object sender, EventArgs e)
+        {
+            
+            int cantidad = int.Parse(txtCantidad.Text) + 1;
+            txtCantidad.Text = cantidad.ToString();
+            Response.Redirect("Inicio.aspx");
         }
     }
 }
