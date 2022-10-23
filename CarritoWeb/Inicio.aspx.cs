@@ -17,7 +17,7 @@ namespace CarritoWeb
             dgvArticulos.DataSource = Negocio.listar();
             dgvArticulos.DataBind();
 
-            
+           
         }
     }
 }
