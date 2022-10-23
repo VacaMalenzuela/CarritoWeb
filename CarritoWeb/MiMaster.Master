@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.Master.cs" Inherits="CarritoWeb.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MiMaster.master.cs" Inherits="CarritoWeb.MiMaster" %>
 
 <!DOCTYPE html>
 
@@ -6,18 +6,28 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Mi Aplicacion Web ASP.NET </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-    <asp:PlaceHolder runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+    </asp:ContentPlaceHolder>
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Mi carrito de compras</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+  
 </head>
 <body>
-    <form runat="server">
+    <form id="form1" runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -38,25 +48,12 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand">Carrito de compras</a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="Search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-            </div>
-        </nav>
 
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi primera APP WEB. Macarena Valenzuela</p>
-            </footer>
-
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

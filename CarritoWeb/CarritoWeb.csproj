@@ -113,8 +113,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Global.asax" />
-    <Content Include="Home.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -139,6 +138,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include=".editorconfig" />
+    <Content Include="MiMaster.Master" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -237,7 +237,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="SiteMaster.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -255,24 +254,21 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiMaster.Master.cs">
+      <DependentUpon>MiMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiMaster.Master.designer.cs">
+      <DependentUpon>MiMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiteMaster.Master.cs">
-      <DependentUpon>SiteMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SiteMaster.Master.designer.cs">
-      <DependentUpon>SiteMaster.Master</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +296,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{d29a28df-74be-400d-8e6f-1b832a9be67d}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{fa714b0c-af52-4bd1-bfdd-d2189ab8ac68}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

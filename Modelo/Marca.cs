@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio
+namespace Modelo
 {
-    public class Categoria
+    public class Marca
     {
         public int id { get; set; }
         public string descripcion { get; set; }
@@ -15,11 +15,12 @@ namespace Dominio
         {
             return descripcion;
         }
-        public Categoria(int ID, string Descripcion)
+
+        public Marca(int iD, string descripcion)
         {
-            this.id = ID;
-            this.descripcion = Descripcion;
+            this.id = iD;
+            this.descripcion = descripcion;
         }
-        public Categoria() { }
+        public Marca() { }
     }
 }
