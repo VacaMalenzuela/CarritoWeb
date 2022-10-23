@@ -11,7 +11,8 @@ namespace Controlador
 {
    public class ArticuloNegocio
    {
-        public List<Articulo> listar() {
+        public List<Articulo> listar() 
+        {
             List<Articulo> Lista  = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
             datos.setConsulta("Select Codigo, Nombre, A.Descripcion, ImagenUrl, precio, M.Descripcion Tipo, C.Descripcion Cat, A.Id from Articulos A, MARCAS M, CATEGORIAS C where a.Idmarca = m.Id and a.IdCategoria = c.Id and A.Activo=1");

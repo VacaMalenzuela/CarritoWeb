@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Modelo;
+using Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,16 @@ namespace CarritoWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["id"].ToString());
+                List<Articulo> temporal = (List<Articulo>)Session["Lista"];
+                Articulo seleccionado = temporal.Find(x => x.Id == id);
+                txtNombre.Text = seleccionado.Nombre;
+                txtPrecio.Text = seleccionado.Precio.ToString();
+                txtNombre.ReadOnly = true;
+                txtPrecio.ReadOnly = true;  
+            }
         }
     }
 }

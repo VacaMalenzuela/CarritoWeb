@@ -13,8 +13,13 @@ namespace CarritoWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio Negocio = new ArticuloNegocio();
-            dgvArticulos.DataSource = Negocio.listar();
+            if (Session["lista"] == null)
+            {
+                ArticuloNegocio Negocio = new ArticuloNegocio();
+                Session.Add("lista", Negocio.listar());
+            }
+
+            dgvArticulos.DataSource = Session["lista"];
             dgvArticulos.DataBind();
 
            
