@@ -12,7 +12,6 @@
         <label for="txtPrecio" class="form-label">Precio</label>
     </div>
     <div class="input-group mb-3">
-        <%--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">--%>
         <asp:TextBox ID="txtPrecio" runat="server" CssClass="form-control" placeholder="0" aria-label="Amount (to the nearest dollar)"> </asp:TextBox>
         <span class="input-group-text">.00</span>
     </div>
@@ -21,8 +20,7 @@
         <label for="txtCantidad" class="form-label">Cantidad</label>
     </div>
     <div class="input-group mb-3">
-        <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" placeholder="1"></asp:TextBox>
-        <asp:Button ID="btnCantidad" class="btn btn-outline-secondary" runat="server" Text="+" OnClick="btnCantidad_Click" />
+        <asp:TextBox TextMode="Number" ID="txtCantidad" runat="server" CssClass="form-control" min="0" max="20" step="1" OnTextChanged="txtCantidad_TextChanged1" ></asp:TextBox>
     </div>
 
     <div class="mb-3">
@@ -30,7 +28,7 @@
         <asp:TextBox ID="txtSubtotal" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
 
-    <div class=" row">
+    <div class="row">
         <div class="col-auto">
             <asp:Button ID="btnAnadir" class="btn btn-primary mb-3" runat="server" Text="Añadir al carrito" OnClick="btnAnadir_Click" />
         </div>
@@ -38,8 +36,11 @@
             <asp:Button ID="btnVolver" class="btn btn-primary mb-3" runat="server" Text="Volver al inicio" OnClick="btnVolver_Click" />
         </div>
     </div>
-    <div class="col-auto">
-            <a runat="server" href="~/Carrito.aspx">Carrito</a>
+        <div class="col-3">
+            <a runat="server" href="~/Carrito.aspx">Agregar al carrito</a>
+        </div>
+        <div class="col-3">
+            <a runat="server" href="~/Inicio.aspx">Volver al inicio</a>
         </div>
 
 </asp:Content>

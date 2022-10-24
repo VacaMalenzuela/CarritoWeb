@@ -7,10 +7,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.Ajax.Utilities;
+using System.Security.Cryptography;
 
 namespace CarritoWeb
 {
-    public partial class Anadir : System.Web.UI.Page
+    public partial class Anadir : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,16 +20,14 @@ namespace CarritoWeb
                 int id = int.Parse(Request.QueryString["id"].ToString());
                 List<Articulo> temporal = (List<Articulo>)Session["Lista"];
                 Articulo seleccionado = temporal.Find(x => x.Id == id);
+
                 txtNombre.Text = seleccionado.Nombre;
                 txtPrecio.Text = seleccionado.Precio.ToString();
                 txtNombre.ReadOnly = true;
                 txtPrecio.ReadOnly = true;
-                //decimal precio = decimal.Parse(txtPrecio.Text);
-                //int cantidad = 1;
-                //txtCantidad.Text = cantidad.ToString();
-                //txtCantidad.ReadOnly = true;
-                txtSubtotal.Text = seleccionado.Precio.ToString();
-                txtSubtotal.ReadOnly = true;
+/
+                //txtSubtotal.Text = seleccionado.Precio.ToString();
+                //txtSubtotal.ReadOnly = true;
             }
         }
 
@@ -42,10 +41,17 @@ namespace CarritoWeb
             Response.Redirect("Inicio.aspx");
         }
 
-        protected void btnCantidad_Click(object sender, EventArgs e)
+        protected void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            int cantidad = int.Parse(txtCantidad.Text) + 1;
-            txtCantidad.Text = cantidad.ToString();
+            decimal precio = Convert.ToDecimal(txtPrecio.TextMode);
+            decimal cantidad = Convert.ToDecimal(txtCantidad.TextMode);
+            decimal subtotal = precio * cantidad;
+            txtSubtotal.Text = subtotal.ToString();
+            txtSubtotal.ReadOnly = true;
+        }
+
+        protected void txtCantidad_TextChanged1(object sender, EventArgs e)
+        {
             Response.Redirect("Inicio.aspx");
         }
     }

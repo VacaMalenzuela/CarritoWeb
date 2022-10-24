@@ -30,5 +30,10 @@ namespace CarritoWeb
             var id = dgvArticulos.SelectedDataKey.Value.ToString();
             Response.Redirect("Anadir.aspx?id=" + id);
         }
+
+        protected void dgvCarrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
